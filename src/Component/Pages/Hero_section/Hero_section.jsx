@@ -22,7 +22,7 @@ const Hero_section = () => {
                 options={{
                   strings: [
                     "Hi, This is Mohammed Nazim",
-                    "Front-end React Web Developer",
+                    "Front-end Web Developer",
                   ],
                   autoStart: true,
                   loop: true,
