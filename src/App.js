@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
+import { RouterProvider } from "react-router-dom";
+import router from "./Component/Router/Router";
+
+import "aos/dist/aos.css"; // You can also use <link> for styles
+import WindoLoader from "./Component/Pages/WindoLoader/WindoLoader";
+
 
 function App() {
+  const [loader, setLoader] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoader(false)
+    }, 2000);
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App ">
+      <RouterProvider router={router} />
+      <Toaster />
+      {
+        loader && <div className="w-full h-screen flex items-center justify-center fixed top-0 left-0 bg-white z-50">
+          <WindoLoader />
+        </div>
+      }
     </div>
   );
 }
