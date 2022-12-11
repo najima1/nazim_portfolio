@@ -102,6 +102,12 @@ const Header_nav = () => {
                 >
                   CONTACT
                 </Link>
+                <Link
+                  className="my-2 text-gray-700 transition-colors duration-300 transform hover:text-blue-500 dark:hover:text-blue-400 md:mx-2 md:my-0 hover:bg-gray-200 p-2 rounded-md"
+                  to="/blog"
+                >
+                  BLOG
+                </Link>
                 <a
                   href="https://drive.google.com/file/d/1YvtGCdIcCNjn6LX9jzoTpghT83uJ_VVG/view?usp=share_link"
                   download={true}
